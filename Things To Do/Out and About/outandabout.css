@@ -1,0 +1,164 @@
+.actvitiesHeroDiv {
+  position: relative;
+  width: 100%;
+  height: 600px; /* or 100vh for full-screen */
+  background-image: url('/Images/ThingsToDoImages/OutAndAboutImages/beach-buggy-back-posed-2.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.actvitiesHeroDiv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark tint */
+  z-index: 0;
+}
+
+.actvitiesHeroDivContent {
+  position: relative;
+  padding-left: 140px;
+  padding-right: 140px;
+  z-index: 1; /* Keeps text above the overlay */
+}
+
+.outAndAboutContainerDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px; /* optional spacing between rows and columns */
+  background-color: white;
+  min-height: 70vh;
+  padding: 70px;
+  width: 100%;
+}
+
+
+
+.outAndAboutBannerDiv {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px; /* space between rows */
+}
+
+
+
+
+.outAndAboutBannerDivImage {
+  width: 98%;
+  aspect-ratio: 1.73 / 1; /* or 16 / 9, 3 / 2 depending on your design */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outAndAboutBannerDivImage img {
+  width: 95%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.outAndAboutBannerDivContent{
+    padding: 35px;
+}
+
+
+.outAndAboutUsefulNumbersDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Horizontally center child elements */
+  align-items: center;      /* Vertically center child elements */
+  background-color: rgb(63, 63, 63);
+  border-radius: 10px;
+  gap: 40px; /* Optional spacing between the two divs */
+  padding: 40px 5px; /* Optional vertical padding */
+  margin-bottom: 10px;
+}
+
+
+
+.importantNumbersDiv {
+  color: white;
+  text-align: center;  /* Optional: center text inside each box */
+  width: 450px;    /* Optional: limit width */
+}
+
+.outAndAboutUsefulTipsDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Horizontally center child elements */
+  align-items: center;      /* Vertically center child elements */
+  background-color: rgb(63, 63, 63);
+  border-radius: 10px;
+  gap: 40px; /* Optional spacing between the two divs */
+  padding: 40px 5px; /* Optional vertical padding */
+  margin-bottom: 10px;
+}
+
+.tipsDiv {
+  color: white;
+  font-size: large;
+  text-align: center;  /* Optional: center text inside each box */
+  max-width: 650px;    /* Optional: limit width */
+}
+
+
+@media (max-width: 1108px) {
+  .outAndAboutBannerDiv {
+    width: 100%;
+  }
+
+  .actvitiesHeroDivContent {
+  padding-left: 90px;
+  padding-right: 90px;
+
+}
+}
+
+
+@media (max-width: 900px) {
+
+  .outAndAboutContainerDiv {
+  gap: 0px; /* optional spacing between rows and columns */
+  padding-left:5px;
+  padding-right: 5px;
+}
+
+.outAndAboutBannerDiv {
+    width: 100%;
+    padding: 0px;
+  }
+  .outAndAboutUsefulNumbersDiv {
+    flex-direction: column;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .importantNumbersDiv {
+  text-align: center;  /* Optional: center text inside each box */
+  width: 500px;    /* Optional: limit width */
+}
+
+  .actvitiesHeroDivContent {
+  padding-left: 60px;
+  padding-right: 60px;
+
+}
+
+}

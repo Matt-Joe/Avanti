@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="/Styling/sharedCSS.css" />
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+  <nav>
+   <div class="navbar-container">
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/images/Logo.png" alt="Logo" />
+      </a>
+    </div>
+<div class="nav-links">
+  <!-- Original Menus (visible only on large screens) -->
+  <div class="dropdown desktop-only">
+    <a href="#" class="dropbtn">About Us</a>
+    <div class="dropdown-content">
+      <a href="/About Us/aboutus.html">About Us</a>
+      <a href="/Contact/contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="dropdown desktop-only">
+    <a href="#" class="dropbtn">Accommodation</a>
+    <div class="dropdown-content">
+      <a href="/Accomodation/Standard Rooms/standardrooms.html">Standard Room</a>
+      <a href="/Accomodation/Self Catering/selfcatering.html">Self Catering</a>
+    </div>
+  </div>
+
+  <div class="dropdown desktop-only">
+    <a href="#" class="dropbtn">Things To Do</a>
+    <div class="dropdown-content">
+      <a href="/Things To Do/Activities/activities.html">Activities</a>
+      <a href="/Things To Do/Eat Out/eatout.html">Eat Out</a>
+      <a href="/Things To Do/Out and About/outandabout.html">Out And About</a>
+    </div>
+  </div>
+
+  <!-- Burger Menu (small screens only) -->
+  <div class="burger-menu mobile-only">
+    <button class="burger-button">&#9776;</button>
+    <div class="burger-dropdown">
+      <a href="/About Us/aboutus.html">About Us</a>
+      <a href="/Contact/contact.html">Contact Us</a>
+      <a href="/Accomodation/Standard Rooms/standardrooms.html">Standard Room</a>
+      <a href="/Accomodation/Self Catering/selfcatering.html">Self Catering</a>
+      <a href="/Things To Do/Activities/activities.html">Activities</a>
+      <a href="/Things To Do/Eat Out/eatout.html">Eat Out</a>
+      <a href="/Things To Do/Out and About/outandabout.html">Out And About</a>
+    </div>
+  </div>
+
+  <!-- Always-visible items -->
+  <a href="/Booking/booking.html" class="book-now">Book Now</a>
+  <div class="dropdown">
+    <a href="#" class="dropbtn">Profile</a>
+    <div class="dropdown-content">
+      <a href="/Profile/profile.html">Profile</a>
+      <a href="/Login/login.html">Login</a>
+      <a href="#" id="logout-link">Logout</a>
+    </div>
+  </div>
+</div>
+</nav>
+
+  <div class="signup-container">
+    <form id="signup-form">
+      <h2>Sign Up to Avanti Guest Lodge</h2>
+  <label for="email">Email</label>
+  <input type="email" id="email" required />
+
+  <label for="phone-number">Phone Number</label>
+  <input type="tel" id="phone-number" name="phone-number" required pattern="^\+?[0-9]{10,15}$" />
+
+  <div class="name-row">
+    <div class="form-group">
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" required />
+    </div>
+    <div class="form-group">
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" required />
+    </div>
+  </div>
+
+  <label for="password">Password</label>
+  <input type="password" id="password" required />
+
+  <label for="confirm-password">Confirm Password</label>
+  <input type="password" id="confirm-password" required />
+
+  <button type="submit">Create Avanti Lodge Account</button>
+  <div id="login">
+    <p>Already have an account? <a href="../Login/login.html">Login</a></p>
+    </div>
+</form>
+ 
+  <div id="message"></div>
+  </div>
+
+<footer class="custom-footer">
+  <div class="footer-content">
+
+    <div class="footer-columns">
+
+      <!-- Contact Section -->
+      <div class="footer-section">
+            <div class="footer-logo">
+              <a href="/index.html">
+                <img src="/images/Logo - HQ.png" alt="Logo" />
+              </a>
+            </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/About Us/aboutus.html">About Us</a></li>
+          <li><a href="/Accomodation/Self Catering/selfcatering.html">Self Catering</a></li>
+          <li><a href="/Accomodation/Standard Rooms/standardrooms.html">Standard Rooms</a></li>
+          <li><a href="/Things To Do/Activities/activities.html">Activities</a></li>
+          <li><a href="/Things To Do/Out and About/outandabout.html">Out And About</a></li>
+          <li><a href="/Contact/contact.html">Contact</a></li>
+          <li><a href="/Booking/booking.html">Book Now</a></li>
+        </ul>
+      </div>
+
+      <!-- Location -->
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>📞 083 551 7502<br>📞 083 691 0929</p>
+        <p>✉️ <a href="mailto:admin@yourdomain.co.za">admin@yourdomain.co.za</a></p><br>
+        <h4>Find Us</h4>
+        <p>📍 19 Hout Street, Vredenburg, 7380</p>
+        <p>🌐 -32.98086069699415, 17.991079832992956</p>
+      </div>
+
+      <!-- Connect & Hours -->
+      <div class="footer-section">
+        <h4>Connect With Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <h4>Check-In / Out</h4>
+        <p>Check-in: 14:00 – 20:00<br>Check-out: 07:00 – 10:00</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+      <p>&copy; Avanti Guest House - All rights reserved</p>
+      <p>Website done by <a href="#">Syntax Syndicate</a></p>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.27.0/dist/umd/supabase.min.js"></script>
+  <script src="signup.js"></script>
+  <script src="/Scripts/sharedjs.js"></script>
+</body>
+</html>

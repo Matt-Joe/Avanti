@@ -1,0 +1,103 @@
+.contactContainerDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #f9f9f9;
+  gap: 2%;
+}
+
+
+
+
+.contactContainerDiv {
+  display: flex;
+  align-items: stretch;
+}
+
+
+.contactFormDiv, .contactMapDiv {
+  width: 49%;
+  padding: 20px;
+ }
+
+.contactFormDiv h2 {
+  margin-bottom: 15px;
+}
+
+.contactFormDiv p {
+  margin-bottom: 25px;
+  color: #666;
+}
+
+.contactFormDiv form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactFormDiv label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.contactFormDiv input,
+.contactFormDiv textarea {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contactFormDiv button {
+  padding: 17px;
+  background-color: #f28c28; /* Orange theme */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contactFormDiv button:hover {
+  background-color: #e67e22;
+}
+
+.contactMapDiv {
+  width: 49%;
+  min-height: 70vh;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+}
+
+.contactMapDiv iframe {
+  flex: 1;
+  border: 0;
+}
+
+@media (max-width: 1250px) {
+  .contactContainerDiv {
+    padding: 35px;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .contactFormDiv, .contactMapDiv {
+    width: 100%;
+    padding: 35px; /* <-- This line ensures full width usage */
+  }
+}
+
+
+@media (max-width: 1010px) {
+  .contactContainerDiv {
+    padding: 5px;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .contactFormDiv, .contactMapDiv {
+    width: 100%;
+    padding: 15px; /* <-- This line ensures full width usage */
+  }
+}

@@ -1,0 +1,111 @@
+.actvitiesHeroDiv {
+  position: relative;
+  width: 100%;
+  height: 500px; /* or 100vh for full-screen */
+  background-image: url('/Images/ThingsToDoImages/table-on-porch.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.actvitiesHeroDiv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark tint */
+  z-index: 0;
+}
+
+.actvitiesHeroDivContent {
+  position: relative;
+  padding-left: 140px;
+  padding-right: 140px;
+  z-index: 1; /* Keeps text above the overlay */
+}
+
+.activitiesContainerDiv{
+    background-color: white;
+    min-height: 70vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.activitiesBannerDiv {
+  display: flex;
+  flex-direction: row; /* default, can be omitted */
+  align-items: center; /* vertically center items */
+  justify-content: space-between; /* optional: space out text and image */
+  padding-top: 5px;
+}
+
+.activitiesBannerDivImage {
+  width: 49%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activitiesBannerDivContent {
+
+  align-content: center;
+  width: 49%;
+  display: flex;
+  flex-direction: column; /* stack text vertically */
+}
+
+.activitiesBannerDivImage img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.activitiesBannerDivContent{
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
+@media (max-width: 1300px) {
+
+    .activitiesBannerDivContent{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+  .activitiesContainerDiv{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 858px) {
+  .activitiesBannerDiv {
+    flex-direction: column; /* stack items vertically on smaller screens */
+  }
+
+  .activitiesBannerDivImage,
+  .activitiesBannerDivContent {
+    width: 100%; /* full width for both sections */
+  }
+
+  .activitiesBannerDivContent{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.activitiesContainerDiv{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

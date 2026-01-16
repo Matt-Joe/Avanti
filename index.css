@@ -1,0 +1,314 @@
+
+
+  .welcomeDiv{
+    min-height: 700px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 2s ease-in-out;
+  }
+
+  .welcomeDiv {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .background-fader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+  }
+
+
+  .indexContainerDiv{
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .sloganCatchDiv {
+    background-color: #1A2619;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px; /* adjust height as needed */
+    text-align: center;
+    color: white;
+  }
+
+  .indexMainContentDiv{
+    background-color: white;
+    width: 70%;
+    
+  }
+
+
+
+ .avantiGuestLodgeDiv {
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* or center if you want it centered horizontally */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  gap: 10px; /* space between items */
+}
+
+.avantiGuestLodgeDiv h1,
+.avantiGuestLodgeDiv h2,
+.avantiGuestLodgeDiv p {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.roomBlockSelectionWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0;
+  height: 600px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden; /* prevents overflow */
+
+}
+
+.roomSelectionBanner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s, opacity 0.3s, border 0.3s;
+  height: 100%;
+  box-sizing: border-box;
+  border: 2px solid transparent; /* Default border */
+  background-clip: padding-box;
+  position: relative;
+  z-index: 1;
+  isolation: isolate; /* ensures hover layer stacks above neighbors */
+}
+
+.roomSelectionBanner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* default no dark */
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.roomSelectionBanner:hover::before {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); /* darken on hover */
+}
+
+.roomSelectionBanner h3 {
+  position: relative;
+  z-index: 3 ; /* keep text above dark overlay */
+  margin: 0;
+}
+
+.roomSelectionBanner:hover {
+  transform: scale(1.02);
+  border: 2px solid #EDB52C; /* <- choose your own color */
+  z-index: 2;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.enquireCatchDiv {
+  background-color: #1A2619;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  flex-direction: column;
+  height: 300px; /* adjust height as needed */
+}
+
+.enquire-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px; /* space between buttons */
+  justify-content: center;
+}
+
+.enquire-button {
+  background-color: #EDB52C;
+  color: white;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 17px 30px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.enquire-button:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+}
+
+.newspapaerColumnDiv1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.newspapaerColumnDiv1Content{
+  width: 49%;
+  margin-right: 5px;
+}
+
+.newspapaerColumnDivImage {
+  width: 49%;
+  margin-left: 10px;
+  height: auto; /* Let the height adapt to the container or define a fixed height if needed */
+  min-height: 300px; /* You can adjust this */
+  background-image: url('/Images/IndexWelcomeDivImages/bag-on-bed.jpg');
+  background-size: cover; /* Ensures the image fills the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image repetition */
+  border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+.indexGalleryContainerDiv{
+  align-items: center;
+  justify-items: center;
+  border-radius: 10px;
+}
+
+.indexGalleryDiv {
+  width: 98%;
+  height: 500px; /* Adjust as needed */
+  overflow: hidden;
+  position: relative;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1008px) {
+
+  .newspapaerColumnDiv1Content{
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .newspapaerColumnDivImage{
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: auto; /* Let the height adapt to the container or define a fixed height if needed */
+    min-height: 300px; /* You can adjust this */
+    background-image: url('/Images/IndexWelcomeDivImages/bag-on-bed.jpg');
+    background-size: cover; /* Ensures the image fills the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    border-radius: 5px; /* Optional: adds rounded corners */
+  }
+  .indexGalleryDiv {
+    height: 350px; /* Adjust for smaller screens */
+  }
+  
+}
+
+.gallery-carousel {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 5px;
+  height: 100%;
+  animation: scrollGallery 150s linear infinite;
+  border-radius: 5px;
+}
+
+.carousel-track img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 5px;
+}
+
+@keyframes scrollGallery {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1650px){
+
+    .welcomeDiv{
+    min-height: 420px;
+  }
+
+    .indexContainerDiv,
+  .indexMainContentDiv {
+    padding: 0 35px !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .avantiGuestLodgeDiv{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+
+@media (max-width: 1010px) {
+    .welcomeDiv{
+    min-height: 300px;
+  }
+
+  .avantiGuestLodgeDiv{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .indexContainerDiv,
+  .indexMainContentDiv {
+    padding: 0 10px !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}

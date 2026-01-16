@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Page title -->
+  <title>Home</title>
+
+  <!-- Linking to page-specific and shared CSS stylesheets -->
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="Styling/sharedCSS.css" />
+</head>
+<body>
+
+  <!-- Navigation bar with links to other pages of the website -->
+<nav>
+  <div class="navbar-container">
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/images/Logo.png" alt="Logo" />
+      </a>
+    </div>
+<div class="nav-links">
+  <!-- Original Menus (visible only on large screens) -->
+  <div class="dropdown desktop-only">
+    <a href="#" class="dropbtn">About Us</a>
+    <div class="dropdown-content">
+      <a href="/About Us/aboutus.html">About Us</a>
+      <a href="/Contact/contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="dropdown desktop-only">
+    <a href="#" class="dropbtn">Accommodation</a>
+    <div class="dropdown-content">
+      <a href="/Accomodation/Standard Rooms/standardrooms.html">Standard Room</a>
+      <a href="/Accomodation/Self Catering/selfcatering.html">Self Catering</a>
+    </div>
+  </div>
+
+  <div class="dropdown desktop-only">
+    <a href="#" class="dropbtn">Things To Do</a>
+    <div class="dropdown-content">
+      <a href="/Things To Do/Activities/activities.html">Activities</a>
+      <a href="/Things To Do/Eat Out/eatout.html">Eat Out</a>
+      <a href="/Things To Do/Out and About/outandabout.html">Out And About</a>
+    </div>
+  </div>
+
+  <!-- Burger Menu (small screens only) -->
+  <div class="burger-menu mobile-only">
+    <button class="burger-button">&#9776;</button>
+    <div class="burger-dropdown">
+      <a href="/About Us/aboutus.html">About Us</a>
+      <a href="/Contact/contact.html">Contact Us</a>
+      <a href="/Accomodation/Standard Rooms/standardrooms.html">Standard Room</a>
+      <a href="/Accomodation/Self Catering/selfcatering.html">Self Catering</a>
+      <a href="/Things To Do/Activities/activities.html">Activities</a>
+      <a href="/Things To Do/Eat Out/eatout.html">Eat Out</a>
+      <a href="/Things To Do/Out and About/outandabout.html">Out And About</a>
+    </div>
+  </div>
+
+  <!-- Always-visible items -->
+  <a href="/Booking/booking.html" class="book-now">Book Now</a>
+  <div class="dropdown">
+    <a href="#" class="dropbtn">Profile</a>
+    <div class="dropdown-content">
+      <a href="/Profile/profile.html">Profile</a>
+      <a href="/Login/login.html">Login</a>
+      <a href="#" id="logout-link">Logout</a>
+    </div>
+  </div>
+</div>
+
+  </div>
+</nav>
+
+
+  <!-- Hero section with fading background effect -->
+  <div class="welcomeDiv">
+    <!-- Background images for fader animation -->
+    <div class="background-fader" id="bg1"></div>
+    <div class="background-fader" id="bg2"></div>
+  </div>
+
+  <!-- Slogan or catchphrase section -->
+  <div class="sloganCatchDiv">
+    <h1>
+      Experience the Beauty of the West Coast
+    </h1>
+  </div>
+
+  <div class ="indexContainerDiv">
+  <!-- Main content container for the homepage -->
+  <div class="indexMainContentDiv">
+
+    <!-- About section describing the guest lodge -->
+    <div class="avantiGuestLodgeDiv">
+      <h1>Avanti Guest Lodge</h1>
+      <h2> Old World Charm West Coast Accommodation</h2>
+      <p>
+        <!-- Introductory paragraph detailing location, features, and ambiance -->
+        Discover serenity at our enchanting retreat in Vredenburg, surrounded by charming fishing villages and powered by sustainable solar energy, ensuring uninterrupted bliss without the hassle of load shedding. All our units are fitted with aircons to ensure maximum comfort. Immerse yourself in the warmth of old-world hospitality while enjoying modern amenities, including a swimming pool and organic vegetable garden.
+        <br><br>
+        Escape the hustle and bustle as you unwind in our spacious garden, complete with team-building activities like putt-putt and a chess area. Embrace relaxation amid the tranquil ambiance, far from the distractions of traffic and city life. Our West Coast accommodation gem offers a harmonious blend of comfort and coastal allure.
+        <br><br>
+        Experience the joy of camaraderie with friends and family with our cornhole area and oversized Jenga blocks, perfect for memorable gatherings. At our property, every moment is an opportunity to connect with nature and indulge in leisure.
+      </p>
+
+      <!-- Subsection introducing the host -->
+      <h2>Your Host</h2>
+      <p >
+        Welcome to Avanti Guest Lodge, where we invite you to make our charming abode your home away from home. Immerse yourself in the allure of old-world charm and experience absolute tranquility as you discover the West Coast in a way you’ve never seen before. 
+        <br>– Mario Brothers
+      </p>
+    </div>
+
+    <!-- Section for quick access to room types and experiences -->
+    
+  </div>
+
+  
+  
+  </div>
+
+  <div class="roomBlockSelectionWrapper">
+      <!-- Each anchor tag represents a clickable banner linking to another section/page -->
+      <a href="/Accomodation/Standard Rooms/standardrooms.html" class="roomSelectionBanner" style="background-image: url('images/IndexWelcomeDivImages/bag-on-bed.jpg');">
+        <h3>Standard Room</h3>
+      </a>
+      <a href="/Accomodation/Self Catering/selfcatering.html" class="roomSelectionBanner" style="background-image: url('images/IndexWelcomeDivImages/bag-on-bed.jpg');">
+        <h3>Self Catering</h3>
+      </a>
+      <a href="/Things To Do/Activities/activities.html" class="roomSelectionBanner" style="background-image: url('images/IndexWelcomeDivImages/golf-corse.jpg');">
+        <h3>Team Building</h3>
+      </a>
+      <a href="/Things To Do/Out and About/outandabout.html" class="roomSelectionBanner" style="background-image: url('images/IndexWelcomeDivImages/front-of-house.jpg');">
+        <h3>Out and About</h3>
+      </a>
+      <a href="/Things To Do/Eat Out/eatout.html" class="roomSelectionBanner" style="background-image: url('images/IndexWelcomeDivImages/wineglasses.jpg');">
+        <h3>Eat Out</h3>
+      </a>
+    </div>
+
+
+  <div class="enquireCatchDiv">
+  <div>
+    <h1>Enjoy the warmth of our hospitality</h1>
+    <div class="enquire-buttons">
+      <a href="/Contact/contact.html" class="enquire-button">Enquire</a>
+      <a href="/Booking/booking.html" class="enquire-button">Book With Us</a>
+    </div>
+  </div>
+</div>
+
+<div class ="indexContainerDiv">
+
+<div class="indexMainContentDiv">
+
+   <div class="avantiGuestLodgeDiv">
+      <h2> Modern Elegance in a Serene Setting </h2>
+      <p>
+      Nestled in the heart of Vredenburg, Avanti Lodge stands as a beacon of modern elegance against the breathtaking backdrop of the West Coast. 
+      <br>Our lodge is meticulously designed to offer a perfect blend of comfort, style, and functionality, providing guests with a home away from home.
+    </p>
+
+    <h3>Self-Catering Bliss</h3>
+     <p>
+      For families seeking a memorable getaway, our self-catering accommodation options are tailored to meet your every need. 
+      <br>Avanti Lodge boasts spacious and well-equipped apartments, ensuring a seamless and enjoyable stay for large families. Revel in the convenience of a fully-equipped kitchen, allowing you to prepare and savor delicious meals together.
+    </p>
+
+    
+      <div class="newspapaerColumnDiv1">
+        <div class="newspapaerColumnDiv1Content">
+
+          
+    <h3>Business Travel Redefined</h3>
+    <p>
+    Avanti Lodge understands the unique needs of today’s business professionals. Our executive suites and corporate packages are designed to provide a haven for travelers on business. 
+    <br>Enjoy a seamless blend of modern amenities, professional services, and a quiet ambiance, allowing you to focus on your work while experiencing the utmost comfort.
+    </p>
+
+    <h3>Unparalleled Amenities</h3>
+<p>
+   Avanti Lodge takes pride in offering a range of amenities that cater to both families and business travelers alike. 
+   <br>From high-speed Wi-Fi and ergonomic workspaces for professionals to a play area for children and BBQ facilities for families, we ensure that every guest experiences unparalleled comfort and convenience
+  </p>
+</div>
+  <div class="newspapaerColumnDivImage">
+  </div>
+    
+</div>
+  <h3>Gallery of Memories</h3>
+<p>
+   Planning an Easter getaway? Avanti Lodge invites you to celebrate the holiday in style. Our special Easter packages cater to families and business travelers alike. Immerse yourself in the tranquility of the West Coast while enjoying the comforts of our modern lodge.
+  </p>
+</div>
+
+
+
+</div>
+<div class="indexGalleryDiv">
+  <div class="gallery-carousel" id="galleryCarousel">
+    <div class="carousel-track" id="carouselTrack">
+      <!-- Images will be inserted by JavaScript -->
+    </div>
+  </div>
+</div>
+</div>
+
+  
+<footer class="custom-footer">
+  <div class="footer-content">
+
+    <div class="footer-columns">
+
+      <!-- Contact Section -->
+      <div class="footer-section">
+            <div class="footer-logo">
+              <a href="/index.html">
+                <img src="/images/Logo - HQ.png" alt="Logo" />
+              </a>
+            </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/About Us/aboutus.html">About Us</a></li>
+          <li><a href="/Accomodation/Self Catering/selfcatering.html">Self Catering</a></li>
+          <li><a href="/Accomodation/Standard Rooms/standardrooms.html">Standard Rooms</a></li>
+          <li><a href="/Things To Do/Activities/activities.html">Activities</a></li>
+          <li><a href="/Things To Do/Out and About/outandabout.html">Out And About</a></li>
+          <li><a href="/Contact/contact.html">Contact</a></li>
+          <li><a href="/Booking/booking.html">Book Now</a></li>
+        </ul>
+      </div>
+
+      <!-- Location -->
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>📞 083 551 7502<br>📞 083 691 0929</p>
+        <p>✉️ <a href="mailto:admin@yourdomain.co.za">admin@yourdomain.co.za</a></p><br>
+        <h4>Find Us</h4>
+        <p>📍 19 Hout Street, Vredenburg, 7380</p>
+        <p>🌐 -32.98086069699415, 17.991079832992956</p>
+      </div>
+
+      <!-- Connect & Hours -->
+      <div class="footer-section">
+        <h4>Connect With Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <h4>Check-In / Out</h4>
+        <p>Check-in: 14:00 – 20:00<br>Check-out: 07:00 – 10:00</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+      <p>&copy; Avanti Guest House - All rights reserved</p>
+      <p>Website done by <a href="#">Syntax Syndicate</a></p>
+    </div>
+
+  </div>
+</footer>
+
+  <!-- JavaScript file for dynamic behavior like background transitions -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="index.js"></script>
+  <script src="/Scripts/sharedjs.js"></script>
+</body>
+</html>

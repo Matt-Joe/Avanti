@@ -1,0 +1,235 @@
+.eatOutHeroDiv {
+  position: relative;
+  min-height: 700px;
+  background-image: url('/Images/EatOutImages/wine-and-pizza.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 50px;
+  margin-bottom: 5px;
+}
+
+.eatOutHeroDiv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.eatOutHeroDivContent {
+  position: relative;
+  padding: 0 140px;
+  z-index: 1;
+  font-size: large;
+}
+
+.eatOutContainerDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 5px;
+}
+
+.eatOutContentContainerDiv {
+    width: 55%;
+  flex: 1;
+}
+
+.eatOutContentDiv {
+    font-size: larger;
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-bottom: 20px;
+}
+
+.eatOutContentButtons {
+  background-color: #1A2619;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.eatOutContentButton {
+    background-color: orange;
+  color: white;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 17px 30px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.eatOutContentButtons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px; /* space between buttons */
+  justify-content: center;
+}
+
+.eatOutContentButton:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+.eatOutGalleryDiv {
+    width: 45%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  
+}
+
+.indexGalleryDiv {
+  height: 250px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-carousel {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 5px;
+  height: 100%;
+}
+
+.carousel-track img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 5px;
+}
+
+.carousel-track1 {
+  animation: scrollGallery 60s linear infinite;
+}
+
+.carousel-track2 {
+  animation: scrollGalleryReverse 75s linear infinite;
+}
+
+.carousel-track3 {
+  animation: scrollGallery 90s linear infinite;
+}
+
+@keyframes scrollGallery {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollGalleryReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+
+
+@media (max-width: 1650px) {
+  .eatOutContainerDiv {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .eatOutContentContainerDiv {
+    width: 100%;
+  }
+
+  .eatOutGalleryDiv{
+    width: 100%;
+  }
+
+  .eatOutContentDiv {
+    padding-top: 20px;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+
+    .eatOutHeroDivContent {
+  position: relative;
+  padding: 25px 50px;
+  z-index: 1;
+  font-size: large;
+}
+
+.eatOutContentButtons{
+  padding: 2px 4px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+}
+
+@media (max-width: 1010px) {
+  .eatOutContainerDiv {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .eatOutContentContainerDiv,
+  .eatOutGalleryDiv {
+    width: 100%;
+  }
+
+  .eatOutContentDiv {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .eatOutGalleryDiv{
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 100%;
+  }
+
+  .eatOutHeroDivContent {
+    padding: 20px 40px;
+  }
+
+  .eatOutContentButtons {
+    width: 100%;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .eatOutContentButton {
+    width: 80% !important;
+    max-width: 90%;
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+}

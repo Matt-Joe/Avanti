@@ -1,0 +1,147 @@
+
+.aboutUsContainerDiv {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  min-height: 70vh;
+  padding : 20px;
+}
+
+
+
+.aboutUsContentContainerDiv{
+display: flex;
+flex-direction: column;
+padding: 0px 150px;
+}
+
+
+
+.aboutUsSideGalleryDiv {
+  background-color: black;
+  min-width: 32%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.aboutUsSideGalleryComponentDiv {
+  width: 100%;
+  aspect-ratio: 1 / 0.65; /* Perfect square */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  border: none;
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.aboutUsSideGalleryComponentDiv:hover {
+  transform: scale(1.03);
+  filter: brightness(0.8);
+  z-index: 1;
+}
+
+.aboutUsMainContentHeaderDiv{
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.aboutUsMainContentDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;       /* 👈 Ensures children stretch full width */
+  justify-content: center;
+  /*padding: 0 100px;  */         /* Keeps your existing side padding */
+  gap: 20px;                  /* Adds clear spacing between sections */
+  text-align: left;           /* 👈 Aligns all text to the left uniformly */
+  width: 100%;
+  box-sizing: border-box;     /* 👈 Ensures padding is included in width */
+}
+
+.aboutUsMainContentDiv p {
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.aboutUsMainContentDiv h1 {
+  font-size: 2.5em;
+  margin: 0;
+  padding: 0px;
+}
+
+.aboutUsMainContentDiv h1:hover,
+ .aboutUsMainContentDiv h2:hover {
+  color: #1A2619;
+}
+
+.aboutUsHostPieceDiv{
+  color: #1A2619;
+  width: 100%;
+ /*   padding: 0 100px; */
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: left;
+}
+
+.aboutUsHostPieceDiv h1:hover,
+ .aboutUsHostPieceDiv h2:hover{
+  color: black;
+ }
+
+  @media (max-width: 1650px) {
+  .aboutUsContainerDiv {
+    flex-direction: column;
+    padding: 35px; /* Optional: reduce horizontal padding for small screens */
+  }
+
+  .aboutUsContentContainerDiv {
+    padding:  75px; /* Optional: reduce horizontal padding for small screens */
+  }
+
+  .aboutUsSideGalleryDiv {
+    flex-direction: row;
+    min-width: 100%; /* Ensure it spans full width */
+    overflow-x: auto; /* Optional: horizontal scroll if needed */
+    gap: 0px; /* Optional: spacing between images */
+  }
+
+  .aboutUsSideGalleryComponentDiv {
+    aspect-ratio: 1 / 1; /* Makes images square in a row layout */
+    flex: 1; /* Makes images share space equally */
+  }
+}
+
+ @media (max-width: 1010px) {
+  .aboutUsContainerDiv {
+    flex-direction: column;
+    padding: 10px; /* Optional: reduce horizontal padding for small screens */
+  }
+
+  .aboutUsContentContainerDiv {
+    padding: 20px; /* Optional: reduce horizontal padding for small screens */
+  }
+
+  .aboutUsSideGalleryDiv {
+    flex-direction: row;
+    min-width: 100%; /* Ensure it spans full width */
+    overflow-x: auto; /* Optional: horizontal scroll if needed */
+    gap: 0px; /* Optional: spacing between images */
+  }
+
+  .aboutUsSideGalleryComponentDiv {
+    aspect-ratio: 1 / 1.25; /* Makes images square in a row layout */
+    flex: 1; /* Makes images share space equally */
+  }
+}
+
+
+
+
+
+
+  

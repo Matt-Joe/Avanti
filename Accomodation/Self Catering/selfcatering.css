@@ -1,0 +1,250 @@
+/* Styling for the Standard Rooms Page */
+
+.welcomeDiv {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.background-fader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  z-index: 0; /* Changed from -1 to 0 */
+}
+
+
+#bg1, #bg2 {
+  opacity: 0;
+}
+
+
+@keyframes fadeBackground {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.welcome-text h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.welcome-text p {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.welcome-text-box {
+  background-color: #1A2619;
+  padding: 2rem 3rem;
+  max-width: 1500px;
+  margin: 2rem auto 0 auto;
+  color: #edb52c;
+  text-align: center;
+  position: relative;
+  z-index: auto;
+}
+
+.info-section, .split-section, .features-section, .overlay-section, .image-gallery-section {
+  padding: 2rem;
+  max-width: 1500px;
+  margin: auto;
+  text-align: center;
+}
+
+.features-section h2,
+.features-section h3 {
+  color: #1A2619;
+}
+
+.split-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #C2BAA5;
+  padding: 2rem;
+}
+
+.split-text h1,
+.split-text h2,
+.split-text h3,
+.split-text h4,
+.split-text h5,
+.split-text h6 {
+  color: #1A2619; /* Dark Green headings */
+}
+
+.split-image img {
+  max-width: 500px;
+}
+
+.split-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.icon-column {
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-column img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-section {
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('/Images/Standard Rooms/pool2.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
+.gallery-heading {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #1A2619;
+}
+
+.cta-booking {
+  background-color: #1A2619;
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-booking h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.cta-booking p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.booking-button {
+  background-color: #edb52c;
+  color: #1A2619;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.booking-button:hover {
+  background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 992px) {
+  .split-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .split-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .split-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .welcome-text h1 {
+    font-size: 3rem;
+  }
+
+  .welcome-text p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 600px) {
+  .welcomeDiv {
+    height: 60vh;
+    padding: 0 1rem;
+  }
+
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text p {
+    font-size: 1rem;
+  }
+
+  .icon-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .icon-column {
+    flex: 1 1 100%;
+  }
+
+  .features-section, .info-section, .overlay-section, .image-gallery-section {
+    padding: 1rem;
+  }
+
+  .overlay-section {
+    padding: 2rem 1rem;
+  }
+
+  .booking-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}

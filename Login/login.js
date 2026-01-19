@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const supabaseUrl = 'https://ukmvpjomlojbimwpcbbl.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVrbXZwam9tbG9qYmltd3BjYmJsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0NDc3NDEsImV4cCI6MjA2MjAyMzc0MX0.fETub5iGTDmfG1kz1tZMv9YQMdE4amLuKojTrdykhcM';
+    const supabaseUrl = 'https://lommjgzgbhflxglathci.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxvbW1qZ3pnYmhmbHhnbGF0aGNpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2ODczNjYzOCwiZXhwIjoyMDg0MzEyNjM4fQ.QIk3VYGW_YA6JVcSamGp25Y8fUveKAEC6b41smQoExQ';
     const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
   
     const form = document.getElementById('login-form');

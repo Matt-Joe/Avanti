@@ -13,38 +13,48 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
-const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
+// ✅ Allowed origins for CORS
+const allowedOrigins = [
+  'http://127.0.0.1:5500',           // local dev
+  'https://avantigl.netlify.app'     // your frontend
+];
 
-// ✅ CORS setup
-const allowedOrigins = ['http://127.0.0.1:5500', 'https://avantigl.netlify.app'];
+// ✅ CORS middleware
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
+  origin: function(origin, callback){
+    if (!origin) return callback(null, true); // allow curl, mobile apps
+    if (allowedOrigins.indexOf(origin) === -1) {
+      return callback(new Error('CORS not allowed for this origin'), false);
     }
+    return callback(null, true);
   },
-  credentials: true,
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET','POST','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization'],
+  credentials: true
 }));
+
+// ✅ Preflight requests
 app.options('*', cors());
 
-// ✅ JSON parser (skip for webhook)
+// ✅ JSON parser (skip for Stripe webhook)
 app.use((req, res, next) => {
   if (req.originalUrl === '/webhook') {
-    next(); // Leave raw for Stripe webhook
+    next(); // leave raw body for Stripe
   } else {
     express.json()(req, res, next);
   }
 });
 
-// ✅ Create Stripe Checkout Session
+// Stripe webhook secret
+const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+// ===============================
+// ROUTES
+// ===============================
+
+// Create Stripe Checkout Session
 app.post('/create-checkout-session', async (req, res) => {
   const { roomID, roomName, start, end, nights, rate, total, userID } = req.body;
-
-  console.log('📨 Incoming booking request:', req.body);
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -52,9 +62,7 @@ app.post('/create-checkout-session', async (req, res) => {
       line_items: [{
         price_data: {
           currency: 'zar',
-          product_data: {
-            name: `Booking: ${roomName}`,
-          },
+          product_data: { name: `Booking: ${roomName}` },
           unit_amount: Math.round(total * 100),
         },
         quantity: 1,
@@ -80,7 +88,7 @@ app.post('/create-checkout-session', async (req, res) => {
   }
 });
 
-// ✅ Stripe Webhook (must be raw)
+// Stripe webhook
 app.post('/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
   const sig = req.headers['stripe-signature'];
   let event;
@@ -92,23 +100,13 @@ app.post('/webhook', express.raw({ type: 'application/json' }), async (req, res)
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
-  // Handle the event
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
     const metadata = session.metadata;
 
-    console.log('📡 Webhook received:', event.type);
-    console.log('📦 Metadata:', metadata);
-
-    if (
-      !metadata ||
-      !metadata.userID ||
-      !metadata.roomID ||
-      metadata.userID === 'unknown' ||
-      metadata.roomID === 'missing'
-    ) {
-      console.error('❌ Missing one or more required metadata fields:', metadata);
-      return res.sendStatus(200); // Do not retry
+    if (!metadata || !metadata.userID || !metadata.roomID) {
+      console.error('❌ Missing metadata:', metadata);
+      return res.sendStatus(200);
     }
 
     try {
@@ -125,8 +123,7 @@ app.post('/webhook', express.raw({ type: 'application/json' }), async (req, res)
         });
 
       if (error) throw new Error(error.message);
-
-      console.log('✅ Booking inserted into Supabase:', data);
+      console.log('✅ Booking inserted:', data);
     } catch (err) {
       console.error('❌ Error inserting booking:', err.message);
     }
@@ -135,7 +132,7 @@ app.post('/webhook', express.raw({ type: 'application/json' }), async (req, res)
   res.sendStatus(200);
 });
 
-// ✅ Manual test route for booking insert
+// Test booking insert
 app.get('/test-booking', async (req, res) => {
   try {
     const { data, error } = await supabase
@@ -150,25 +147,15 @@ app.get('/test-booking', async (req, res) => {
         created_at: new Date().toISOString()
       });
 
-    if (error) {
-      console.error('❌ Insert test error:', error.message);
-      return res.status(500).send('Insert test failed: ' + error.message);
-    }
-
-    console.log('🧪 Insert test data:', data);
+    if (error) return res.status(500).send('Insert test failed: ' + error.message);
     res.send('Test booking inserted successfully!');
   } catch (err) {
-    console.error('❌ Unexpected test error:', err.message);
     res.status(500).send('Unexpected error: ' + err.message);
   }
 });
 
-// ✅ Health check
-app.get('/', (req, res) => {
-  res.send('Server is up and running!');
-});
+// Health check
+app.get('/', (req, res) => res.send('Server is running!'));
 
-// ✅ Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});
+// Start server
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

@@ -16,7 +16,7 @@ const supabase = createClient(
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 // ✅ CORS setup
-const allowedOrigins = ['http://127.0.0.1:5500', 'https://avantiguestlodge.netlify.app'];
+const allowedOrigins = ['http://127.0.0.1:5500', 'https://avantigl.netlify.app'];
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -60,8 +60,8 @@ app.post('/create-checkout-session', async (req, res) => {
         quantity: 1,
       }],
       mode: 'payment',
-      success_url: 'https://avantiguestlodge.netlify.app/profile/profile',
-      cancel_url: 'https://avantiguestlodge.netlify.app/booking/booking',
+      success_url: 'https://avantigl.netlify.app/profile/profile',
+      cancel_url: 'https://avantigl.netlify.app/booking/booking',
       metadata: {
         roomID: roomID?.toString() || 'missing',
         start: start?.toString() || '',
